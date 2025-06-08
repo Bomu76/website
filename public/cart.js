@@ -9,7 +9,12 @@ function addToCart(productName, price) {
   }
 
   localStorage.setItem('cart', JSON.stringify(cart));
-  alert(`เพิ่ม ${productName} ลงในตะกร้าแล้ว`);
+  Swal.fire({
+    icon: 'success',
+    title: `เพิ่ม ${productName} ลงในตะกร้าแล้ว`,
+    text: 'คุณได้เพิ่มสินค้าเรียบร้อยแล้ว',
+    confirmButtonText: 'ตกลง'
+  });
 }
 
 function loadCart() {
@@ -28,7 +33,6 @@ function loadCart() {
       checkoutButton.style.opacity = 0.5;
       checkoutButton.addEventListener('click', function (e) {
         e.preventDefault();
-        alert("ไม่มีสินค้าในตะกร้า");
       });
     }
     return;
