@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ชำระเงิน</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="checkout.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+
+        form {
+            max-width: 420px;
+            margin: 2rem auto;
+            background-color: #fff9f0;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(90, 70, 50, 0.08);
+            color: #5b4636;
+            font-family: 'Mitr', sans-serif;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        form input {
+            width: 92%;
+            padding: 0.8rem 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #d5c2a1;
+            background-color: #f7f1e1;
+            font-family: 'Mitr', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            color: #5b4636;
+        }
+
+        form input:focus {
+            border-color: #a27b5c;
+            outline: none;
+            background-color: #fffdf8;
+            box-shadow: 0 0 0 2px rgba(162, 123, 92, 0.2);
+        }
+
+        form button {
+            padding: 12px;
+            background-color: #a27b5c;
+            color: #f7f1e1;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Mitr', sans-serif;
+            width: 100%;
+        }
+
+        form button:hover {
+            background-color: #8c6245;
+            transform: scale(1.02);
+        }
+
+
+        #qr-popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #qr-content {
+            background: #fff9f0;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            color: #5b4636;
+            max-width: 300px;
+            margin: 1rem;
+        }
+
+        #qr-content img {
+            max-width: 250px;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(90, 70, 50, 0.1);
+        }
+
+        #qr-content button {
+            background-color: #7cae65;
+            color: #f7f1e1;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #qr-content button:hover {
+            background-color: #679c50;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">หน้าแรก</a>
+            <a href="menu.html">เมนูสินค้า</a>
+            <a href="cart.html">ตะกร้าสินค้า</a>
+        </nav>
+        <h1>ชำระเงิน</h1>
+    </header>
+
+    <form id="checkout-form">
+        <label>ชื่อผู้รับ</label>
+        <input type="text" id="name" required>
+
+        <label>ที่อยู่จัดส่ง</label>
+        <input type="text" id="address" required>
+
+        <label>เบอร์โทรศัพท์</label>
+        <input type="tel" id="phone" required>
+
+        <button type="submit">ยืนยันการชำระเงิน</button>
+    </form>
+
+    <div id="qr-popup">
+        <div id="qr-content">
+            <h3>สแกนจ่ายด้วย QR Code</h3>
+            <img src="https://api.qrserver.com/v1/create-qr-code/?data=ขอบคุณที่ทดลองใช้เวอร์ชั่นทดลองของชาเรืองเดชคำสั่งซื้อครั้งนี้จัดส่งให้ฟรีไม่มีค่าใช้จ่าย&size=250x250"
+                alt="QR Code">
+            <button onclick="confirmPayment()">ฉันได้สแกนจ่ายเรียบร้อยแล้ว</button>
+        </div>
+    </div>
+</body>
+
+</html>

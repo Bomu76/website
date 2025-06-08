@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Mitr', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f1e1;
+    /* สีครีมอ่อน */
+    color: #5b4636;
+    /* สีน้ำตาลเข้มสำหรับข้อความ */
+}
+
+/* เปลี่ยน header เป็น flex container เพื่อวาง nav กับ ชื่อแบรนด์ชิดซ้าย-ขวา */
+header {
+    background-color: #a27b5c;
+    /* สีน้ำตาลกลาง */
+    color: #f7f1e1;
+    /* สีครีม */
+    padding: 1rem 2rem;
+    /* เพิ่ม padding ซ้าย-ขวา */
+    display: flex;
+    /* flex layout */
+    justify-content: space-between;
+    /* กระจาย nav กับชื่อแบรนด์ */
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+/* nav ย้ายออกจากการตั้ง background สี header ไปไว้ใน nav เพื่อให้แยกออก */
+nav {
+    /* ลบ background-color ทิ้ง */
+    padding: 0;
+    /* ลบ padding */
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+    /* เว้นระยะห่างระหว่างลิงก์ */
+}
+
+/* ปรับปุ่มเมนูให้เป็นปุ่มมีพื้นหลัง */
+nav a {
+    background-color: #7e5d43;
+    /* น้ำตาลเข้มกว่าของเดิมนิดหน่อย */
+    color: #f7f1e1;
+    /* สีครีม */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+/* โฮเวอร์ขยายใหญ่และเปลี่ยนสีพื้นหลัง */
+nav a:hover {
+    background-color: #5c4330;
+    /* น้ำตาลเข้มขึ้น */
+    transform: scale(1.1);
+}
+
+/* ชื่อแบรนด์ใน header */
+header h1 {
+    margin: 0;
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 1rem;
+        padding: 0.5rem 0.8rem;
+        text-align: center;
+        min-width: 100px;
+        justify-content: center;
+    }
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.container {
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #7cae65;
+    /* สีเขียวเข้ม */
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #679c50;
+}
+
+.card {
+    width: 100%;
+    max-width: 100%;
+}
+
+button {
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* ทำให้สินค้าเรียงตรงกลาง */
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    max-width: 280px;
+    flex: 1 1 240px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(90, 70, 50, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.card button {
+    font-family: 'Mitr', sans-serif;
+    padding: 0.6rem 1.2rem;
+    background-color: #7cae65;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.card button:hover {
+    background-color: #679c50;
+}
+
+/* ตารางตะกร้าสินค้า */
+#cart-container table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Mitr', sans-serif;
+    color: #5b4636;
+    /* น้ำตาลเข้มข้อความ */
+}
+
+#cart-container thead tr {
+    background-color: #a27b5c;
+    /* น้ำตาลกลาง */
+    color: #f7f1e1;
+    /* ครีม */
+}
+
+#cart-container th,
+#cart-container td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #d9c7ad;
+}
+
+#cart-container button {
+    background-color: #d85c4c;
+    color: #f7f1e1;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#cart-container button:hover {
+    background-color: #b14638;
+    /* สีแดงเข้มขึ้นเวลาชี้ */
+    transform: scale(1.05);
+}
+
+#total-price {
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #5b4636;
+}

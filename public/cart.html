@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตะกร้าสินค้า</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="cart.js" defer></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #cbbf9f;
+            color: #5b4636;
+        }
+
+        thead th {
+            border-bottom: 2px solid #a27b5c;
+            font-weight: 600;
+            font-size: 1rem;
+            background-color: transparent;
+            color: #f7f1e1;
+        }
+
+        tbody tr:hover {
+            background-color: #f0e6d2;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            color: #5b4636;
+            font-weight: 600;
+        }
+
+        #checkout-button {
+            font-family: 'Mitr', sans-serif;
+            padding: 8px 16px;
+            font-size: 1rem;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            width: auto;
+            /* สำคัญ */
+            min-width: 120px;
+            /* กำหนดขนาดขั้นต่ำ */
+        }
+
+        #checkout-button:hover {
+            background-color: #1d7832;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body onload="loadCart()">
+    <header>
+        <nav>
+            <a href="index.html">หน้าแรก</a>
+            <a href="menu.html">เมนูสินค้า</a>
+            <a href="cart.html">ตะกร้าสินค้า</a>
+        </nav>
+        <h1>ตะกร้าสินค้า</h1>
+    </header>
+
+    <div class="container">
+        <div id="cart-container"></div>
+        <div class="total" id="total-price"></div>
+        <div style="text-align: right; margin-top: 1rem;">
+            <a href="checkout.html">
+                <button id="checkout-button"> ชำระเงิน </button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
