@@ -3,8 +3,8 @@ const line = require('@line/bot-sdk');
 const cors = require('cors');
 
 const config = {
-    channelAccessToken: '4/nvMH0y/dY/bb6GV07vTPBHoBBY9D69w5dr8ItiBdaiEU+Na+E4kFVVES/JkdTQZyJ2i+BY8YuTk8f249xVf1wyfC8VhlXB+aOUJfeVWlw0Ivy7jse01rY98igsXi/JOrhYXt/Mgp5kGwHYp19/bgdB04t89/1O/w1cDnyilFU=',
-    channelSecret: '152af73841caba21313aebe405d0395c'
+    channelAccessToken: process.env.LINE_ACCESS_TOKEN,
+    channelSecret: process.env.LINE_CHANNEL_SECRET
 };
 
 const app = express();
