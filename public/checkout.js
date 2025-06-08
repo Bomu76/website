@@ -28,7 +28,7 @@ form.addEventListener('submit', async function (e) {
     };
 
     try {
-        const response = await fetch('http://localhost:10000/sendOrder', {
+        const response = await fetch('/sendOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(orderData)
