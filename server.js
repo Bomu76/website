@@ -1,6 +1,7 @@
 const express = require('express');
 const line = require('@line/bot-sdk');
 const cors = require('cors');
+require('dotenv').config();
 
 const config = {
     channelAccessToken: process.env.LINE_ACCESS_TOKEN,
