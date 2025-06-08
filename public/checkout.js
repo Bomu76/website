@@ -13,14 +13,12 @@ form.addEventListener('submit', async function (e) {
         return;
     }
 
-    // ดึงตะกร้าสินค้า
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length === 0) {
         alert("ไม่มีสินค้าในตะกร้า");
         return;
     }
 
-    // เตรียมข้อมูลสั่งซื้อสำหรับส่ง backend
     const orderData = {
         customerName: name,
         address: address,
@@ -30,7 +28,6 @@ form.addEventListener('submit', async function (e) {
     };
 
     try {
-        // ส่งข้อมูลไป backend (แก้ URL เป็นของคุณเอง)
         const response = await fetch('http://localhost:3000/sendOrder', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -42,7 +39,6 @@ form.addEventListener('submit', async function (e) {
             return;
         }
 
-        // ถ้าส่งข้อมูลสำเร็จ แสดง popup QR code
         qrPopup.style.display = "flex";
 
     } catch (error) {

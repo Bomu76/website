@@ -13,7 +13,6 @@ app.use(express.json());
 
 const client = new line.Client(config);
 
-// Endpoint รับคำสั่งซื้อจาก frontend
 app.post('/sendOrder', async (req, res) => {
     const order = req.body;
 
@@ -21,7 +20,6 @@ app.post('/sendOrder', async (req, res) => {
         return res.status(400).send('ข้อมูลคำสั่งซื้อไม่ครบถ้วน');
     }
 
-    // สร้างข้อความที่จะแจ้งผู้ขาย
     let messageText = `มีคำสั่งซื้อใหม่:\nชื่อ: ${order.customerName}\nที่อยู่: ${order.address}\nเบอร์โทร: ${order.phone}\n\nรายการสินค้า:\n`;
 
     order.items.forEach(item => {
@@ -45,7 +43,6 @@ app.post('/sendOrder', async (req, res) => {
     }
 });
 
-// เริ่ม server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server รันที่พอร์ต ${PORT}`);

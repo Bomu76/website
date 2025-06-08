@@ -5,45 +5,30 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f7f1e1;
-    /* สีครีมอ่อน */
     color: #5b4636;
-    /* สีน้ำตาลเข้มสำหรับข้อความ */
 }
 
-/* เปลี่ยน header เป็น flex container เพื่อวาง nav กับ ชื่อแบรนด์ชิดซ้าย-ขวา */
 header {
     background-color: #a27b5c;
-    /* สีน้ำตาลกลาง */
     color: #f7f1e1;
-    /* สีครีม */
     padding: 1rem 2rem;
-    /* เพิ่ม padding ซ้าย-ขวา */
     display: flex;
-    /* flex layout */
     justify-content: space-between;
-    /* กระจาย nav กับชื่อแบรนด์ */
     align-items: center;
     font-weight: 600;
     font-size: 1.5rem;
 }
 
-/* nav ย้ายออกจากการตั้ง background สี header ไปไว้ใน nav เพื่อให้แยกออก */
 nav {
-    /* ลบ background-color ทิ้ง */
     padding: 0;
-    /* ลบ padding */
     margin: 0;
     display: flex;
     gap: 1rem;
-    /* เว้นระยะห่างระหว่างลิงก์ */
 }
 
-/* ปรับปุ่มเมนูให้เป็นปุ่มมีพื้นหลัง */
 nav a {
     background-color: #7e5d43;
-    /* น้ำตาลเข้มกว่าของเดิมนิดหน่อย */
     color: #f7f1e1;
-    /* สีครีม */
     padding: 0.5rem 1rem;
     border-radius: 8px;
     text-decoration: none;
@@ -55,14 +40,11 @@ nav a {
     user-select: none;
 }
 
-/* โฮเวอร์ขยายใหญ่และเปลี่ยนสีพื้นหลัง */
 nav a:hover {
     background-color: #5c4330;
-    /* น้ำตาลเข้มขึ้น */
     transform: scale(1.1);
 }
 
-/* ชื่อแบรนด์ใน header */
 header h1 {
     margin: 0;
     user-select: none;
@@ -103,7 +85,6 @@ h1 {
 .btn-primary {
     display: inline-block;
     background-color: #7cae65;
-    /* สีเขียวเข้ม */
     color: #fff;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
@@ -136,7 +117,6 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* ทำให้สินค้าเรียงตรงกลาง */
     gap: 1.5rem;
 }
 
@@ -179,20 +159,16 @@ button {
     background-color: #679c50;
 }
 
-/* ตารางตะกร้าสินค้า */
 #cart-container table {
     width: 100%;
     border-collapse: collapse;
     font-family: 'Mitr', sans-serif;
     color: #5b4636;
-    /* น้ำตาลเข้มข้อความ */
 }
 
 #cart-container thead tr {
     background-color: #a27b5c;
-    /* น้ำตาลกลาง */
     color: #f7f1e1;
-    /* ครีม */
 }
 
 #cart-container th,
@@ -216,7 +192,6 @@ button {
 
 #cart-container button:hover {
     background-color: #b14638;
-    /* สีแดงเข้มขึ้นเวลาชี้ */
     transform: scale(1.05);
 }
 
