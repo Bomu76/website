@@ -9,13 +9,6 @@ form.addEventListener('submit', async function (e) {
     const phone = document.getElementById('phone').value.trim();
 
     if (!name || !address || !phone) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'กรอกข้อมูลไม่ครบ!',
-            text: 'กรุณากรอกข้อมูลให้ครบถ้วนก่อนดำเนินการ',
-            confirmButtonColor: '#f27474',
-            confirmButtonText: 'เข้าใจแล้ว'
-        });
         return;
     }
 
@@ -54,13 +47,6 @@ form.addEventListener('submit', async function (e) {
 
 function confirmPayment() {
     qrPopup.style.display = "none";
-    Swal.fire({
-        icon: 'success',
-        title: 'สั่งซื้อสำเร็จ!',
-        text: 'คุณจะได้รับสินค้าภายในวันพรุ่งนี้',
-        showConfirmButton: false,
-        timer: 3000
-    });
     localStorage.removeItem('cart');
     window.location.href = "index.html";
 }

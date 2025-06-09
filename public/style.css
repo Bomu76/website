@@ -82,6 +82,30 @@ h1 {
     text-align: center;
 }
 
+.floating-cart-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #ff0000;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 28px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: background-color 0.3s;
+}
+
+.floating-cart-btn:hover {
+  background-color: #c90000;
+  cursor: pointer;
+}
+
 .btn-primary {
     display: inline-block;
     background-color: #7cae65;
